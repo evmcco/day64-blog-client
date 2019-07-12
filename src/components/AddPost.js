@@ -19,14 +19,19 @@ class AddPost extends Component {
     });
   };
 
-  handleSubmit = () => {
+  handleSubmit = async () => {
     const url = "http://localhost:3000/v1/post/add";
     const formData = this.state;
     console.log("Form Data:", formData);
-    const response = fetch(url, {
+    const response = await fetch(url, {
       method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(formData)
     });
+    console.log("Response:", response);
   };
 
   render() {

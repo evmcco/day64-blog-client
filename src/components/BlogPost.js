@@ -32,7 +32,6 @@ class BlogPost extends Component {
   render() {
     const { post } = this.state;
     console.log("post", post);
-    // console.log("post title", post[0].title);
     return (
       <div>
         <h2>{post.title}</h2>
